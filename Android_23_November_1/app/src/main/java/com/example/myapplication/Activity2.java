@@ -58,11 +58,11 @@ public class Activity2 extends AppCompatActivity {
         }
 
         try{
-            final JSONArray geodata = myStringReader.getJSONArray("geodata");
-            final JSONObject person = geodata.getJSONObject(0);
-            Log.e("DEVE0304", "MainActivity.testJson() : " + person.getString("name"));
+            final JSONObject name = myStringReader.getJSONObject("name");
+            Log.e("name : ", "MainActivity.testJson() : " + name.getString("name"));
             int aJsonInteger = myStringReader.getInt("INTEGERNAME");
-            String aJsonString = myStringReader.getString("STRINGNAME");
+            final JSONObject age = myStringReader.getJSONObject("age");
+            Log.e("name : ", "MainActivity.testJson() : " + age.getString("age"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
