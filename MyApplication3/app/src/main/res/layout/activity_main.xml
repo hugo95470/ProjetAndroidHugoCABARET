@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
@@ -19,19 +19,27 @@
         <Button android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to LoginPage"
-            android:onClick="goToLoginPage"/>
+            android:text="Go to activity 2"
+            android:onClick="goToActivity2"/>
 
-        <Button android:id="@+id/button2"
+        <Button
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to activity 2" />
+            android:text="Go to activity 3"
+            android:onClick="goToActivity3"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to activity 4"
+            android:onClick="goToActivity4"/>
 
         <Button android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Launch REST request"
-            android:onClick="runRestRequest"/>
+            android:text="Launch REST request"/>
 
         <TextView android:id="@+id/textRequest"
             android:layout_width="wrap_content"

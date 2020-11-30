@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.Volley;
@@ -30,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.e("DEVE0304", "Button clicked");
-                Intent intent = new Intent(view.getContext(), Activity2.class);
-                view.getContext().startActivity(intent);
+                Intent myIntent = new Intent(view.getContext(), Activity2.class);
+                myIntent.putExtra("Nom de l'utilisateur","John Doe");
+                view.getContext().startActivity(myIntent);
             }
         });
 
@@ -76,11 +76,19 @@ public class MainActivity extends AppCompatActivity {
         view.getContext().startActivity(intent);
     };
 
-    public void goToLoginPage(View view){
+    public void goToActivity3(View view){
 
         Log.e("DEVE0304", "Button clicked");
 
-        Intent intent = new Intent(view.getContext(), LoginPage.class);
+        Intent intent = new Intent(view.getContext(), Activity3.class);
+        view.getContext().startActivity(intent);
+    };
+
+    public void goToActivity4(View view){
+
+        Log.e("DEVE0304", "Button clicked");
+
+        Intent intent = new Intent(view.getContext(), Activity4.class);
         view.getContext().startActivity(intent);
     };
 
@@ -94,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="https://www.google.com";
-        url = "http://192.168.1.13/TRANSV/api/getUser.php";
+        url = "https://api.github.com/zen";
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -110,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.e("DEVE0304", String.valueOf(error));
+                    Log.e("DEVE0304", "Request answer : Failed");
                 }
         });
 
